@@ -96,5 +96,5 @@ if (process.env.NODE_ENV !== 'production') {
     });
 }
 
-// WAJIB: Export app supaya Vercel bisa membacanya
+// WAJIB: Export app agar Vercel bisa menjalankannya
 module.exports = app;
