@@ -86,6 +86,15 @@ app.get('/api/gempa-list', async (req, res) => {
 });
 
 // ... app.listen di bawah tetap sama ...
-app.listen(PORT, () => {
-    console.log(`[SERVER] Backend berjalan di http://localhost:${PORT}`);
-});
+//app.listen(PORT, () => {
+//    console.log(`[SERVER] Backend berjalan di http://localhost:${PORT}`);
+//});
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = 3000;
+    app.listen(PORT, () => {
+        console.log(`Server jalan di http://localhost:${PORT}`);
+    });
+}
+
+// WAJIB: Export app supaya Vercel bisa membacanya
+module.exports = app;
