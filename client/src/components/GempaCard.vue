@@ -122,7 +122,7 @@ const fetchData = async () => {
   loading.value = true;
   try {
     // Ganti angkanya sesuai hasil ipconfig Anda
-const res = await axios.get('http://192.168.8.153:3000/api/gempa-list');
+const res = await axios.get('/api/gempa-list');
     listGempa.value = res.data.data;
   } catch (err) {
     error.value = "Gagal mengambil data. Pastikan Backend (Port 3000) aktif.";
